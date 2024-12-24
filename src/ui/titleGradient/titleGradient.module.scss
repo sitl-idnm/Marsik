@@ -1,0 +1,83 @@
+@use "@styles/func";
+@use "@styles/mixins" as *;
+@use "@styles/variables";
+
+/* stylelint-disable rule */
+/* stylelint-disable rule */
+
+
+
+.root {
+  font-family: var(--font-act);
+  text-align: center;
+  margin: 10px 0;
+  line-height: 1.2;
+  letter-spacing: 0.5em;
+  color: white;
+  text-transform: uppercase;
+
+  background: linear-gradient(
+    102.81deg,
+    #949494 43.46%,
+    #d5d5d5 51.32%,
+    #fff 55.16%,
+    #d5d5d5 57.85%,
+    #949494 65.14%
+  );
+  background-size: 200% 100%; // Делаем градиент больше, чтобы он мог "переливаться"
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+}
+
+.title {
+  font-size: 42px;
+  font-weight: bold;
+
+  &__small {
+    font-size: 16px;
+  }
+
+  &__large {
+    font-size: 64px;
+  }
+
+  &__marsa {
+    font-size: 42px;
+    margin-bottom: 28px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    @include tablet {
+      font-size: 37px;
+      margin-bottom: 20px;
+    }
+
+    @include tablet-small {
+      font-size: 31px;
+    }
+  }
+
+  &__absolute {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__vacancy {
+    font-size: 32px;
+    line-height: 1.5;
+    font-family: var(--font-esq);
+    letter-spacing: 0;
+    max-width: 456px;
+    text-align: right;
+
+    @include tablet-small {
+			font-size: 28px;
+			max-width: 328px;
+		}
+  }
+}

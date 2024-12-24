@@ -1,0 +1,121 @@
+@use "@styles/func";
+@use "@styles/mixins" as *;
+@use "@styles/variables";
+
+/* stylelint-disable */
+
+/* stylelint-disable */
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; // Расстояние между слайдерами
+  padding: 20px;
+  border-radius: 10px; // Округленные углы контейнера
+
+	@include tablet {
+    max-width: 179px;
+	}
+}
+
+.sliderwrapper {
+  position: relative;
+  width: 100%;
+  height: 8px;
+  background: linear-gradient(to right, #00baff, #003d5c); // Градиент дорожки
+  border-radius: 4px;
+  overflow: hidden; // Обрезка лишних элементов
+
+	@include tablet {
+    height: 1px;
+	}
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  height: 8px;
+  appearance: none;
+  outline: none;
+  pointer-events: none;
+  z-index: 1;
+  background-color: #09202c; // Начальный фон
+  border-radius: 4px;
+
+	@include tablet {
+    height: 4px;
+	}
+}
+
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;  /* Размер ползунка */
+  height: 20px; /* Размер ползунка */
+  border-radius: 50%; /* Круглая форма */
+  background-color: #add7ee; /* Новый цвет ползунка */
+  box-shadow: 0 0 10px rgba(173, 215, 238, 0.8); /* Свечение с новым цветом */
+  cursor: pointer; /* Курсор при наведении */
+  transition: all 0.2s ease; /* Плавный переход для изменений */
+
+	@include tablet {
+    height: 10px;
+    width: 10px;
+	}
+}
+
+.slider::-webkit-slider-thumb:hover {
+  box-shadow: 0 0 20px rgba(173, 215, 238, 1); /* Более сильное свечение при наведении */
+}
+
+.slider::-webkit-slider-thumb:active {
+  background-color: #9cbfda; /* Тёмный оттенок при нажатии */
+  box-shadow: 0 0 20px rgba(173, 215, 238, 1); /* Увеличенное свечение при нажатии */
+}
+
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #add7ee; /* Новый цвет ползунка */
+  box-shadow: 0 0 10px rgba(173, 215, 238, 0.8); /* Свечение с новым цветом */
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+	@include tablet {
+    height: 10px;
+    width: 10px;
+	}
+}
+
+.slider::-moz-range-thumb:hover {
+  box-shadow: 0 0 20px rgba(173, 215, 238, 1);
+}
+
+.slider::-moz-range-thumb:active {
+  background-color: #9cbfda;
+  box-shadow: 0 0 20px rgba(173, 215, 238, 1);
+}
+
+.slider::-ms-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #add7ee; /* Новый цвет ползунка */
+  box-shadow: 0 0 10px rgba(173, 215, 238, 0.8); /* Свечение с новым цветом */
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+	@include tablet {
+    height: 10px;
+    width: 10px;
+	}
+}
+
+.slider::-ms-thumb:hover {
+  box-shadow: 0 0 20px rgba(173, 215, 238, 1);
+}
+
+.slider::-ms-thumb:active {
+  background-color: #9cbfda;
+  box-shadow: 0 0 20px rgba(173, 215, 238, 1);
+}

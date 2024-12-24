@@ -1,0 +1,24 @@
+@use "@styles/func";
+@use "@styles/mixins" as *;
+@use "@styles/variables";
+
+.root {
+	display: flex;
+	max-width: 40px;
+	width: 100%;
+}
+
+.link {
+	position: relative;
+
+	&__item {
+    width: 40px;
+    height: 42px;
+		position: relative;
+
+		@include tablet-small {
+			width: 32px;
+			height: 32px;
+		}
+	}
+}

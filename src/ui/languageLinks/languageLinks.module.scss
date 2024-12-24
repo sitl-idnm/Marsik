@@ -1,0 +1,19 @@
+@use "@styles/func";
+@use "@styles/mixins" as *;
+@use "@styles/variables";
+
+.root {
+	display: flex;
+	gap: 14px;
+}
+
+.link	{
+	font-size: 20px;
+	line-height: 1.5;
+	font-family: var(--font-esq);
+	color: var(--color-white);
+
+	@include tablet-small {
+    font-size: 14px;
+  }
+}

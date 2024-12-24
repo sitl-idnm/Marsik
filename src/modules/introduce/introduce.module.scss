@@ -1,0 +1,113 @@
+@use "@styles/func";
+@use "@styles/mixins" as *;
+@use "@styles/variables";
+
+.root {
+	display: flex;
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+.image {
+	width: 100vw;
+	height: 100vh;
+}
+
+.marsa {
+	max-width: 100vw;
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 28px;
+
+	@include tablet {
+		font-size: 37px;
+		gap: 20px;
+	}
+
+	@include tablet-small {
+		gap: 31px;
+		top: 35%;
+	}
+
+	.description {
+		font-size: 22px;
+		line-height: 120%;
+		color: var(--color-white-2);
+		font-family: var(--font-esq);
+		text-align: center;
+		text-transform: uppercase;
+
+		@include desktop {
+			font-size: 18px;
+		}
+
+		@include tablet {
+			line-height: 180%;
+		}
+
+		@include tablet-small {
+			font-size: 14px;
+		}
+	}
+}
+
+.button {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	top: 48%;
+	width: 100%;
+	left: 0%;
+	z-index: 10;
+
+	@include desktop {
+		top: 52%;
+	}
+
+	@include tablet-small {
+		top: 48%;
+	}
+}
+
+.introducesvg {
+	bottom: 0;
+
+	@include desktop {
+		width: 100vw;
+		height: 100vh;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%) translateY(0%);
+	}
+
+	@include tablet {
+		width: 105vw;
+		height: 100vw;
+		transform: translateX(-50%) translateY(30%);
+	}
+
+	@include tablet-small {
+		width: 700px;
+		height: 600px;
+		transform: translateX(-50%) translateY(35%);
+	}
+
+	@include tablet-small {
+		width: 700px;
+		height: 600px;
+		transform: translateX(-50%) translateY(45%);
+	}
+
+	svg {
+			width: 100%;
+			height: 100%;
+	}
+}

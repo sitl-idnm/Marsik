@@ -1,0 +1,1 @@
+export { default as GradientBlur } from './gradientBlur'

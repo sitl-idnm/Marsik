@@ -1,0 +1,85 @@
+@use "@styles/func";
+@use "@styles/mixins" as *;
+@use "@styles/variables";
+
+.root {
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+
+	background: center no-repeat url('../../shared/assets/icons/Folder__background.svg');
+
+	color: white;
+
+	max-width: 1088px;
+
+	margin: 55px auto;
+	padding: 100px 265px 65px 80px;
+
+	@include tablet {
+		gap: 20px;
+
+		max-width: 738px;
+
+		background: center no-repeat url('../../shared/assets/icons/Folder__background__tablet.svg');
+		background-size: contain;
+
+		margin: 26.5px auto;
+		padding: 55px 65px 72px 34px;
+	}
+
+	@include tablet-small {
+		gap: 12px;
+
+		max-width: 336px;
+
+		background: center no-repeat url('../../shared/assets/icons/Folder__background__mobile.svg');
+		background-size: contain;
+
+		margin: 12px auto;
+		padding: 54px 18px 44.5px;
+	}
+
+	.title {
+		font-family: var(--font-act);
+		font-size: 42px;
+		line-height: 120%;
+		letter-spacing: 50%;
+		text-transform: uppercase;
+		text-align: left;
+
+		span {
+			text-align: left;
+		}
+
+		@include tablet-small {
+			font-size: 28px;
+		}
+	}
+
+	.text {
+		font-family: var(--font-esq);
+		font-size: 15px;
+		line-height: 150%;
+
+		text-align: justify;
+
+		color: var(--color-white-2);
+
+		@include tablet-small {
+			font-size: 14px;
+		}
+	}
+
+	.ps {
+		font-family: var(--font-esq);
+		font-size: 15px;
+		line-height: 150%;
+
+		color: var(--color-white-3);
+
+		@include tablet-small {
+			font-size: 14px;
+		}
+	}
+}

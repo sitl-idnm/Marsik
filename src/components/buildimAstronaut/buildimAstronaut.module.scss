@@ -1,0 +1,35 @@
+@use "@styles/func";
+@use "@styles/mixins" as *;
+@use "@styles/variables";
+
+.root {
+	position: absolute;
+	top: 0;
+	z-index: 5;
+	left: -200px;
+
+	@include tablet {
+		left: -350px;
+	}
+
+	@include tablet-small {
+		left: -210px;
+		top: 110px;
+	}
+
+	.image {
+		position: absolute;
+		opacity: 0;
+		transition: opacity 1s;
+
+		@include tablet-small {
+			width: 700px;
+			height: 400px;
+		}
+	}
+
+	.visible {
+		opacity: 1; /* Видимое изображение */
+		transition: opacity 1s;
+	}
+}

@@ -1,0 +1,53 @@
+@use "@styles/func";
+@use "@styles/mixins" as *;
+@use "@styles/variables";
+
+/* stylelint-disable rule *//* stylelint-disable rule */
+
+.root {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	gap: 32px;
+	align-items: center;
+
+	@include tablet-small {
+		gap: 24px 28px;
+		align-items: flex-start;
+	}
+
+	svg {
+		width: 197px;
+		height: 240px;
+		position: relative;
+
+		@include tablet-small {
+			width: 156px;
+			height: 192px;
+		}
+	}
+}
+
+.row {
+	display: flex;
+	gap: 32px;
+}
+
+.evenRow {
+	@include tablet {
+		transform: translateX(100px);
+	}
+
+	@include tablet-small {
+		transform: translateX(0);
+	}
+}
+
+.offsetCard {
+	// Убираем глобальный стиль и ограничиваем его только медиазапросом
+	transform: none;
+
+	@include tablet-small {
+		transform: translateY(60px);
+	}
+}

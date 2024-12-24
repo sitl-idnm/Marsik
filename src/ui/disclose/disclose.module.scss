@@ -1,0 +1,31 @@
+@use "@styles/func";
+@use "@styles/mixins" as *;
+@use "@styles/variables";
+
+.root {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	background: center no-repeat url('../../../public/images/background__company.webp');
+
+	width: 100%;
+	height: 100%;
+
+	@include tablet-small {
+		background: center no-repeat url('../../../public/images/background__company-mobiel.webp');
+	}
+
+	.left {
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	.right {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+	}
+}

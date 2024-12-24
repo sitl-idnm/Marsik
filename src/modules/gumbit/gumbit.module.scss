@@ -1,0 +1,65 @@
+@use "@styles/func";
+@use "@styles/mixins" as *;
+@use "@styles/variables";
+
+.root {
+	background: url("../../shared/assets/icons/table.svg") repeat;
+	background-size: 60%;
+
+	@include tablet-small {
+		background-size: 100%;
+	}
+}
+
+.wrapper {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 39px 0 48px;
+	position: relative;
+
+	display: flex;
+	flex-direction: column;
+	gap: 36px;
+
+	@include tablet {
+		gap: 30px;
+		padding: 80px 103px;
+	}
+
+	@include tablet-small {
+		gap: 18px;
+		padding: 77px 12px 80px;
+	}
+}
+
+.title {
+	span {
+		display: block;
+		text-align: left;
+
+		font-size: 28px;
+		line-height: 1.5;
+		margin: 0 0 0 72px;
+		font-weight: 400;
+		font-family: var(--font-esq);
+		letter-spacing: 0;
+
+		@include tablet-small {
+			font-size: 14px;
+			margin: 0;
+		}
+	}
+}
+
+.gradient {
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  transform: translateX(-50%) translateY(-50%);
+
+	svg {
+		@include tablet-small {
+			width: 320px;
+		}
+	}
+}

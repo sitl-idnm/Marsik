@@ -1,0 +1,89 @@
+/* stylelint-disable selector-class-pattern */
+@use "@styles/func";
+@use "@styles/mixins" as *;
+@use "@styles/variables";
+
+.root {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 40px;
+	padding-top: 44px;
+
+	@include tablet-small {
+		gap: 0;
+	}
+
+	.title {
+		font-family: var(--font-act);
+		font-size: 64px;
+		line-height: 150%;
+		word-spacing: 50%;
+
+		@include tablet-small {
+			font-size: 40px;
+			line-height: 120%;
+			transform: translateX(5px);
+		}
+	}
+
+	.container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		overflow: visible;
+
+		background: center no-repeat url('../../../public/images/mission-background-large.webp');
+		background-size: cover;
+		height: 100vh;
+		width: 100vw;
+
+		padding-top: 70px;
+
+		@include desktop {
+			height: 100vh;
+			background: top no-repeat url('../../../public/images/mission-background-desktop.webp');
+			background-size: cover;
+		}
+
+		@include tablet-small {
+			background: center no-repeat url('../../../public/images/mission-background-mobile.webp');
+			background-size: cover;
+
+			height: 600px;
+		}
+
+		&__wrapper {
+			overflow-y: hidden;
+
+			.wrapper__text {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 32px;
+
+				font-family: var(--font-esq);
+				font-size: 14px;
+				line-height: 150%;
+				color: var(--color-white-2);
+
+				max-width: 416px;
+				max-height: 340px;
+
+				text-align: center;
+
+				@include tablet {
+					font-size: 14px;
+				}
+
+				@include tablet-small {
+					font-size: 10px;
+
+					max-width: 280px;
+					max-height: 245px;
+				}
+			}
+		}
+	}
+
+}

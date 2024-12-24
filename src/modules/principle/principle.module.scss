@@ -1,0 +1,89 @@
+@use "@styles/func";
+@use "@styles/mixins" as *;
+@use "@styles/variables";
+
+/* stylelint-disable rule */
+
+/* stylelint-disable rule */
+
+.root {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  padding: 121px 0 124px;
+  overflow: hidden;
+
+  background: url("../../shared/assets/icons/table.svg") repeat;
+  background-size: 60%;
+
+  @include tablet-small {
+    font-size: 43px;
+    background-size: 100%;
+    padding: 36px 0 84px;
+  }
+}
+
+.gradient {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+
+  svg {
+    @include tablet-small {
+      width: 320px;
+    }
+  }
+}
+
+.title {
+  font-family: var(--font-act);
+  font-size: 42px;
+  line-height: 120%;
+  letter-spacing: 50%;
+
+  @include tablet-small {
+    font-size: 32px;
+    padding-left: 12px;
+  }
+
+  div {
+    text-align: left;
+  }
+}
+
+.principleCards {
+  position: relative;
+  width: 100%;
+  height: 400px; // Высота контейнера для карточек
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include mobile {
+    height: 280px;
+  }
+}
+
+.slide {
+  position: absolute;
+  opacity: 0;
+  transform: scale(0.1) translateX(100%); // Начальное состояние: снизу с уменьшенным масштабом
+  transition: opacity 0.5s ease, transform 0.5s ease; // Плавная анимация
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide.entering {
+  opacity: 1;
+  transform: scale(1) translateY(0); // Финальное состояние: в центре с нормальным масштабом
+}
+
+.slide.exiting {
+  opacity: 0;
+  transform: scale(0.1) translateX(-100%); // Исчезновение вниз с уменьшенным масштабом
+}

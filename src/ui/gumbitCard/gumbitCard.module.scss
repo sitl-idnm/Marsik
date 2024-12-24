@@ -1,0 +1,28 @@
+@use "@styles/func";
+@use "@styles/mixins" as *;
+@use "@styles/variables";
+
+.root {
+	display: flex;
+	position: relative;
+	flex: 0 1 calc(22% - 20px);
+}
+
+.text {
+	position: absolute;
+	font-family: var(--font-esq);
+	font-size: 14px;
+	line-height: 1.2;
+	letter-spacing: -0.04em;
+	color: var(--color-white);
+	left: 8px;
+	bottom: 8px;
+	max-width: 170px;
+
+	@include tablet-small {
+		font-size: 10px;
+		left: 4px;
+		bottom: 4px;
+		max-width: 136px;
+	}
+}

@@ -1,0 +1,17 @@
+@use "@styles/func";
+@use "@styles/mixins" as *;
+@use "@styles/variables";
+
+.root {
+	display: flex;
+	position: absolute;
+	bottom: 0;
+	z-index: 1;
+	width: 100vw;
+	height: 100vh;
+
+	svg {
+		width: 100vw;
+		height: 100vh;
+	}
+}

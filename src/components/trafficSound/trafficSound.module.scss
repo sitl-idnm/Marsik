@@ -1,0 +1,49 @@
+@use "@styles/func";
+@use "@styles/mixins" as *;
+@use "@styles/variables";
+
+/* stylelint-disable */
+
+.root {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  height: 200px; /* Высота контейнера */
+  width: 300px; /* Ширина контейнера */
+
+	@include tablet {
+    height: 69px;
+    width: 160px;
+	}
+}
+
+.column {
+  display: flex;
+  flex-direction: column-reverse; /* Заполнение снизу вверх */
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px 16px; /* Расстояние между квадратиками */
+
+	@include tablet {
+    gap: 4px 8px;
+	}
+}
+
+.square {
+  width: 30px;
+  height: 20px;
+  background-color: #09202c;
+  opacity: 1;
+	border-radius: 1px;
+  transition: opacity 0.3s ease-in-out;
+
+	@include tablet {
+    height: 10px;
+    width: 15px;
+	}
+}
+
+.square.active {
+  opacity: 1;
+  background-color: #4184a9;
+}

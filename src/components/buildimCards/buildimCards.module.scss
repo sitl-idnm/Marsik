@@ -1,0 +1,131 @@
+@use "@styles/func";
+@use "@styles/mixins" as *;
+@use "@styles/variables";
+
+.root {
+	display: flex;
+	position: relative;
+	gap: 18px;
+	z-index: 10;
+	width: 70%;
+	padding-left: 50px;
+
+	@include tablet-small {
+		padding-left: 12px;
+	}
+}
+
+/* stylelint-disable rule */
+/* stylelint-disable rule */
+
+// Шапка модального окна (h2 + SVG)
+.modalHeader {
+  display: flex;
+	flex-direction: column;
+	gap: 0;
+  align-items: flex-start;
+  margin-bottom: 20px;
+
+  .modalIcons {
+    display: flex;
+    gap: 12px;
+  }
+
+  .modalTitle {
+		font-family: var(--font-act);
+    font-size: 62px;
+    font-weight: 700;
+		letter-spacing: 0.2em;
+		line-height: 130%;
+    color: #ffffff; // Заголовок
+    margin: 0;
+
+    @include tablet-small {
+      font-size: 32px;
+    }
+
+    span {
+      letter-spacing: 20%;
+      line-height: 150%;
+    }
+  }
+}
+
+// Секция с текстом
+.modalSection {
+  margin-top: 40px;
+  margin-bottom: 40px;
+
+  .modalSubtitle {
+		margin-bottom: 12px;
+		font-size: 16px;
+		color: #d0d0d0;
+		list-style: disc;
+		font-family: var(--font-act);
+		font-size: 20px;
+		line-height: 1.5;
+		letter-spacing: 0em;
+		color: #F0F3F7;
+  }
+
+  .modalText {
+		font-family: var(--font-act);
+    font-size: 14px;
+    line-height: 1.5;
+		letter-spacing: -0.04em;
+    color: #F0F3F7; // Светлый серый текст
+		margin-bottom: 40px;
+
+		&__inside {
+			font-family: var(--font-act);
+			font-size: 14px;
+			line-height: 1.5;
+			letter-spacing: -0.04em;
+			color: #F0F3F7;
+		}
+  }
+
+  ul {
+    padding-left: 20px;
+
+    li {
+      margin-bottom: 8px;
+      font-size: 16px;
+      color: #d0d0d0;
+      list-style: disc;
+			font-family: var(--font-act);
+			font-size: 14px;
+			line-height: 1.5;
+			letter-spacing: -0.04em;
+			color: rgb(208, 208, 208);
+    }
+
+	}
+}
+
+.modalButton {
+	margin-top: 40px;
+}
+
+// Кнопка закрытия модального окна
+.modalClose {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 24px;
+  height: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  svg {
+    width: 24px;
+    height: 24px;
+    stroke: #ffffff;
+    transition: stroke 0.2s;
+
+    &:hover {
+      stroke: #ff5f5f; // Красный при наведении
+    }
+  }
+}

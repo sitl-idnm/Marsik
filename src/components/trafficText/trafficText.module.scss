@@ -1,0 +1,19 @@
+@use "@styles/func";
+@use "@styles/mixins" as *;
+@use "@styles/variables";
+
+.root {
+	font-family: var(--font-esq);
+	margin: 0 85px;
+	font-size: 14px;
+	line-height: 1.8;
+	font-weight: 400px;
+	color: var(--color-white-2);
+	max-width: 60%;
+
+	@include tablet-small {
+		font-size: 12px;
+		margin: 0 12px;
+		max-width: 100%;
+	}
+}

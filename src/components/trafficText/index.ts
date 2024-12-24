@@ -1,0 +1,1 @@
+export { default as TrafficText } from './trafficText'

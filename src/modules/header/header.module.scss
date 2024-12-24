@@ -1,0 +1,86 @@
+@use '@styles/func';
+@use '@styles/mixins' as *;
+
+.root {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  width: 100%;
+
+  &::after {
+    z-index: 1;
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: max(#{func.rem(2)}, 2px);
+    background-color: var(--color-blue-border);
+  }
+
+  strong {
+    font-family: var(--font-act);
+  }
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: func.rem(32);
+  padding-bottom: func.rem(32);
+
+  /* stylelint-disable-next-line selector-class-pattern */
+  .tg__about {
+    display: flex;
+    gap: 20px;
+
+    @include mobile-large {
+      display: none;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+
+      p {
+        color: var(--color-white-2);
+        font-size: 20px;
+        font-family: var(--font-esq);
+        line-height: 100%;
+      }
+    }
+  }
+}
+
+.telegram {
+  position: relative;
+
+  @include mobile-large {
+    order: 1;
+  }
+}
+
+.logo {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+
+  @include mobile-large {
+    position: relative;
+    left: auto;
+    transform: none;
+    order: 0;
+  }
+}
+
+.language {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  position: relative;
+
+  @include mobile-large {
+    order: 2;
+  }
+}
